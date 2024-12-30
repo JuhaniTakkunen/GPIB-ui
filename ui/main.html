@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPIB Controller UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>GPIB Controller</h1>
+    <div id="controls">
+        <h2>Settings</h2>
+        <form id="range-form">
+            <label for="start-wl">Start Wavelength (nm):</label>
+            <input type="number" id="start-wl" name="start_wl" min="0" required>
+            <label for="stop-wl">Stop Wavelength (nm):</label>
+            <input type="number" id="stop-wl" name="stop_wl" min="0" required>
+            <button type="submit">Set Range</button>
+        </form>
+        <form id="reference-form">
+            <label for="reference">Reference Level (dBm):</label>
+            <input type="number" id="reference" name="reference" min="-90" max="20" required>
+            <button type="submit">Set Reference</button>
+        </form>
+        <form id="resolution-form">
+            <label for="resolution">Resolution (nm):</label>
+            <input type="number" id="resolution" name="resolution" min="0.05" max="10" step="0.01" required>
+            <button type="submit">Set Resolution</button>
+        </form>
+        <form id="active-trace-form">
+            <label for="active-trace">Active Trace:</label>
+            <select id="active-trace" name="trace" required>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+            </select>
+            <button type="submit">Set Active Trace</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
